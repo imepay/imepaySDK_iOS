@@ -55,7 +55,8 @@ Objective C:
 Swift:
 
   let manager = IMPPaymentManager(environment: Live)
-        manager?.pay("username" , password: "password", merchantCode: "merchantCode", merchantName: "merchantName", merchantUrl: "merchantUrl", amount: "amount", customerMobileNumber: "customerMobileNumber", referenceId: "referenceId", module: "module", success: { (info) in
+  
+  manager?.pay("username" , password: "password", merchantCode: "merchantCode", merchantName: "merchantName", merchantUrl: "merchantUrl", amount: "amount", customerMobileNumber: "customerMobileNumber", referenceId: "referenceId", module: "module", success: { (info) in
             print("success with transaction info \(info!)")
         }, failure: { (transcationInfo) in
             print("failure with transaction info \(transcationInfo!)")
