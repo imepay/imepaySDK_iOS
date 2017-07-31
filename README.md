@@ -28,7 +28,9 @@ SDK Installation
 
 Cocoapods
 
-pod 'IMEPay'
+pod 'IMEPay' 
+
+uncomment use frameworks in pod your pod file in case of swift projects
 
 iOS 8+
 
