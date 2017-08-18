@@ -42,26 +42,24 @@ The merchant is verified using the merchant code, merchant username, merchant pa
 
 ###### Objective C:
 
-  ```IMPPaymentManager *manager = [[IMPPaymentManager alloc]initWithEnvironment:Live];
+  ```IMPPaymentManager *manager = [[IMPPaymentManager alloc]initWithEnvironment:Live];```
     
-    [manager pay:@"username" password:@"password" merchantCode:@"merchantCode" merchantName:@"merchantName" merchantUrl:@"merchantUrl" amount:@"amount" customerMobileNumber:@"customerMobileNumber" referenceId:@"referenceId" module:@"module" success:^(NSDictionary *transactionInfo) {
+    ```[manager pay:@"username" password:@"password" merchantCode:@"merchantCode" merchantName:@"merchantName" merchantUrl:@"merchantUrl" amount:@"amount" customerMobileNumber:@"customerMobileNumber" referenceId:@"referenceId" module:@"module" success:^(NSDictionary *transactionInfo) {```
         
-        NSLog(@"Sucess!!");
+        ```NSLog(@"Sucess!!");```
         
-    } failure:^(NSDictionary *transactionInfo) {
+    ```} failure:^(NSDictionary *transactionInfo) {```
          NSLog(@"Failure!!");
-    }];
-     ```      ```
-
+    ```}];```
 ###### Swift:
 
-  ```let manager = IMPPaymentManager(environment: Live)
+  ```let manager = IMPPaymentManager(environment: Live)```
   
-  manager?.pay("username" , password: "password", merchantCode: "merchantCode", merchantName: "merchantName", merchantUrl: "merchantUrl", amount: "amount", customerMobileNumber: "customerMobileNumber", referenceId: "referenceId", module: "module", success: { (info) in
-            print("success with transaction info \(info!)")
-        }, failure: { (transcationInfo) in
-            print("failure with transaction info \(transcationInfo!)")
-        })```      ```
+  ```manager?.pay("username" , password: "password", merchantCode: "merchantCode", merchantName: "merchantName", merchantUrl: "merchantUrl", amount: "amount", customerMobileNumber: "customerMobileNumber", referenceId: "referenceId", module: "module", success: { (info) in```
+           ```print("success with transaction info \(info!)")```
+        ```}, failure: { (transcationInfo) in```
+            ```print("failure with transaction info \(transcationInfo!)")```
+        ```})```
 
 ###### Note: You can use transaction info passed in success and failure blocks, you shouldnt present any alert when success or failure block is called.
 
@@ -69,8 +67,8 @@ The merchant is verified using the merchant code, merchant username, merchant pa
 
 These response codes mentioned below are handled by the SDK itself.
 
-**403 : Application unauthorized to use the service.
-500 : Your request cannot be processed at the moment
-401 : Application request cannot be processed at the moment
+**403** : Application unauthorized to use the service.
+**500** : Your request cannot be processed at the moment
+**401** : Application request cannot be processed at the moment
 
 
