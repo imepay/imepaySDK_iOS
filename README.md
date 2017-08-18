@@ -43,15 +43,15 @@ The merchant is verified using the merchant code, merchant username, merchant pa
 
 ###### Objective C:
 
-  ```IMPPaymentManager *manager = [[IMPPaymentManager alloc]initWithEnvironment:Live];```
+  ``` IMPPaymentManager *manager = [[IMPPaymentManager alloc]initWithEnvironment:Live];
     
-    ```[manager pay:@"username" password:@"password" merchantCode:@"merchantCode" merchantName:@"merchantName" merchantUrl:@"merchantUrl" amount:@"amount" customerMobileNumber:@"customerMobileNumber" referenceId:@"referenceId" module:@"module" success:^(NSDictionary *transactionInfo) {```
+   [manager pay:@"username" password:@"password" merchantCode:@"merchantCode" merchantName:@"merchantName" merchantUrl:@"merchantUrl" amount:@"amount" customerMobileNumber:@"customerMobileNumber" referenceId:@"referenceId" module:@"module" success:^(NSDictionary *transactionInfo) {
         
-        ```NSLog(@"Sucess!!");```
+        NSLog(@"Sucess!!");
         
-    ```} failure:^(NSDictionary *transactionInfo) {```
+    } failure:^(NSDictionary *transactionInfo) {
          NSLog(@"Failure!!");
-    ```}];```
+    }]; ```
 ###### Swift:
 
   ```let manager = IMPPaymentManager(environment: Live)```
