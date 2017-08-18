@@ -27,7 +27,8 @@ IME pay iOS Merchant Payment SDK enables merchants to receive payments from IME 
 ## SDK Installation
 
 Cocoapods
-```use frameworks!``` 
+```use frameworks!```
+
 ```pod 'IMEPay'``` 
 
 uncomment use frameworks in pod your pod file in case of swift projects
