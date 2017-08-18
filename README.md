@@ -69,7 +69,10 @@ The merchant is verified using the merchant code, merchant username, merchant pa
 These response codes mentioned below are handled by the SDK itself.
 
 **403** : Application unauthorized to use the service.
+
 **500** : Your request cannot be processed at the moment
+
 **401** : Application request cannot be processed at the moment
+
 
 
