@@ -14,9 +14,6 @@ Receive payment from your customer through IME pay.
 - Perform Payment
 - Validate Payment
 - Response Codes
-- Sample Code
-- Releases
-- Introduction
 
 The IME Pay Payment SDK for iOS gives access to merchants to receive payment from IME Pay customers through their native iOS application.
 
