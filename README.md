@@ -54,14 +54,14 @@ The merchant is verified using the merchant code, merchant username, merchant pa
     }]; ```
 ###### Swift:
 
-  ```let manager = IMPPaymentManager(environment: Live)```
+  ``` let manager = IMPPaymentManager(environment: Live)
   
-  ```manager?.pay("username" , password: "password", merchantCode: "merchantCode", merchantName: "merchantName", merchantUrl: "merchantUrl", amount: "amount", customerMobileNumber: "customerMobileNumber", referenceId: "referenceId", module: "module", success: { (info) in```
-           ```print("success with transaction info \(info!)")```
-        ```}, failure: { (transcationInfo) in```
-            ```print("failure with transaction info \(transcationInfo!)")```
-        ```})```
-
+  manager?.pay("username" , password: "password", merchantCode: "merchantCode", merchantName: "merchantName", merchantUrl: "merchantUrl", amount: "amount", customerMobileNumber: "customerMobileNumber", referenceId: "referenceId", module: "module", success: { (info) in
+             print("success with transaction info \(info!)")
+         }, failure: { (transcationInfo) in
+              print("failure with transaction info \(transcationInfo!)")
+           }) ```
+           
 ###### Note: You can use transaction info passed in success and failure blocks, you shouldnt present any alert when success or failure block is called.
 
 ## Response Codes
