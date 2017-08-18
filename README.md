@@ -52,7 +52,7 @@ The merchant is verified using the merchant code, merchant username, merchant pa
         
     } failure:^(NSDictionary *transactionInfo) {
          NSLog(@"Failure!!");
-    }];  ```
+    }];
 
 ###### Swift:
 
@@ -64,8 +64,6 @@ The merchant is verified using the merchant code, merchant username, merchant pa
          }, failure: { (transcationInfo) in
               print("failure with transaction info \(transcationInfo!)")
            })
-           ```
-
            
 ###### Note: You can use transaction info passed in success and failure blocks, you shouldnt present any alert when success or failure block is called.
 
