@@ -50,7 +50,7 @@ The merchant is verified using the merchant code, merchant username, merchant pa
         
     } failure:^(NSDictionary *transactionInfo) {
          NSLog(@"Failure!!");
-    }];```
+    }]; ```
 
 ###### Swift:
 
