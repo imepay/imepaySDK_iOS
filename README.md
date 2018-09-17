@@ -1,8 +1,8 @@
 # imepaySDK_iOS
 
-## IME PAY : iOS MERCHANT PAYMENT SDK
+## IME PAY MERCHANT PAYMENT SDK FOR iOS
 
-Receive payment from your customer through IME pay.
+Receive payment from your customer through IME Pay Wallet.
 
  ## Overview
 
@@ -19,7 +19,7 @@ The IME Pay Payment SDK for iOS gives access to merchants to receive payment fro
 
 ## SDK Features
 
-IME pay iOS Merchant Payment SDK enables merchants to receive payments from IME pay customes through their native application. The application performs the payment and verifies the transaction status.
+IME Pay iOS Merchant Payment SDK enables merchants to receive payments from IME pay customes through their native application. The SDK performs the payment and returns transaction details after transaction succeeds or fails or cancelled with proper error message.
 
 ## SDK Installation
 
@@ -33,7 +33,7 @@ uncomment use frameworks in your pod file in case of swift projects.
 
 ## Authenticate Merchant / Get Transaction Token
 
-The merchant is verified using the merchant code, merchant username, merchant password, module which will be provided by the IME pay Developer Support to applicable merchants.
+The merchant is verified using the merchant code, merchant username, merchant password, module which will be provided by the IME Pay Support to applicable merchants.
 
 ## Perform Payment:
 
