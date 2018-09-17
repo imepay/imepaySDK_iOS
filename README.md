@@ -40,18 +40,24 @@ The merchant is verified using the merchant code, merchant username, merchant pa
 ###### Objective C:
 
   ``` 
-  IMPPaymentManager *manager = [[IMPPaymentManager alloc]initWithEnvironment:Live];
+  IMPPaymentManager *manager = [[IMPPaymentManager alloc]initWithEnvironment:Live]; // For Production
+  
+  IMPPaymentManager *manager = [[IMPPaymentManager alloc]initWithEnvironment:Test]; // For Test
     
    [manager payWithUsername:@"username" password:@"password" merchantCode:@"merchantCode" merchantName:@"merchantName" merchantUrl:@"merchantUrl" amount:@"amount" referenceId:@"referenceId" module:@"module" success:^(IMPTransactionInfo *transactionInfo) {
         
         // You can extract the following info from transactionInfo
         
-        transactionInfo.responseCode // Response Code
-        transactionInfo.responseDescription // ResponseDescription
-        transactionInfo.transactionId // Transaction Id
-        transctionInfo.customerMsisdn // Customer mobile number (IME Pay wallet ID)
-        transctionInfo.amount // Payment Amount
-        transactionInfo.referenceId // Reference Id
+        transactionInfo.responseCode; 
+        
+        // Response Code 100:- Transaction successful.
+        // Response Code 101:- Transaction failed.
+        
+        transactionInfo.responseDescription; // ResponseDescription, message sent from server
+        transactionInfo.transactionId; // Transaction Id, Unique ID generated from IME Pay system.
+        transctionInfo.customerMsisdn; // Customer mobile number (IME Pay wallet ID)
+        transctionInfo.amount; // Payment Amount
+        transactionInfo.referenceId; // Reference Value
  
     } failure:^(IMPTransactionInfo *transactionInfo, errorMessage) {
          // Transaction Failure
@@ -62,16 +68,24 @@ The merchant is verified using the merchant code, merchant username, merchant pa
 ###### Swift:
 
   ``` 
-  let manager = IMPPaymentManager(environment: Live)
+  let manager = IMPPaymentManager(environment: Live) // For production
+  
+  let manager = IMPPaymentManager(environment: Test) // For Test
   
  manager?.pay(withUsername: "username" , password: "password", merchantCode: "merchantCode", merchantName: "merchantName",    merchantUrl: "merchantUrl", amount: "amount", referenceId: "referenceId", module: "module", success: { (transactionInfo) in
   
-        transactionInfo.responseCode // Response Code
-        transactionInfo.responseDescription // ResponseDescription
-        transactionInfo.transactionId // Transaction Id
+        // You can extract the following info from transactionInfo
+        
+        transactionInfo.responseCode 
+        
+        // Response Code 100:- Transaction successful.
+        // Response Code 101:- Transaction failed.
+        
+        transactionInfo.responseDescription // ResponseDescription, message sent from server
+        transactionInfo.transactionId // Transaction Id, Unique ID generated from IME Pay system.
         transctionInfo.customerMsisdn // Customer mobile number (IME Pay wallet ID)
         transctionInfo.amount // Payment Amount
-        transactionInfo.referenceId // Reference Id
+        transactionInfo.referenceId // Reference Value
  
   }, failure: { (transactionInfo, errorMessage) in
          // Transaction Failure
