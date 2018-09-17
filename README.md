@@ -42,12 +42,19 @@ The merchant is verified using the merchant code, merchant username, merchant pa
   ``` 
   IMPPaymentManager *manager = [[IMPPaymentManager alloc]initWithEnvironment:Live];
     
-   [manager pay:@"username" password:@"password" merchantCode:@"merchantCode" merchantName:@"merchantName" merchantUrl:@"merchantUrl" amount:@"amount" customerMobileNumber:@"customerMobileNumber" referenceId:@"referenceId" module:@"module" success:^(NSDictionary *transactionInfo) {
+   [manager payWithUsername:@"username" password:@"password" merchantCode:@"merchantCode" merchantName:@"merchantName" merchantUrl:@"merchantUrl" amount:@"amount" referenceId:@"referenceId" module:@"module" success:^(IMPTransactionInfo *transactionInfo) {
         
-        NSLog(@"Sucess!!");
+        // You can extract the following info from transactionInfo
         
-    } failure:^(NSDictionary *transactionInfo) {
-         NSLog(@"Failure!!");
+        transactionInfo.responseCode // Response Code
+        transactionInfo.responseDescription // ResponseDescription
+        transactionInfo.transactionId // Transaction Id
+        transctionInfo.customerMsisdn // Customer mobile number (IME Pay wallet ID)
+        transctionInfo.amount // Payment Amount
+        transactionInfo.referenceId // Reference Id
+ 
+    } failure:^(IMPTransactionInfo *transactionInfo, errorMessage) {
+         // Transaction Failure
     }];
 
   ``` 
@@ -57,14 +64,20 @@ The merchant is verified using the merchant code, merchant username, merchant pa
   ``` 
   let manager = IMPPaymentManager(environment: Live)
   
-  manager?.pay("username" , password: "password", merchantCode: "merchantCode", merchantName: "merchantName", merchantUrl: "merchantUrl", amount: "amount", customerMobileNumber: "customerMobileNumber", referenceId: "referenceId", module: "module", success: { (info) in
-             print("success with transaction info \(info!)")
-         }, failure: { (transcationInfo) in
-              print("failure with transaction info \(transcationInfo!)")
-           })
+ manager?.pay(withUsername: "username" , password: "password", merchantCode: "merchantCode", merchantName: "merchantName",    merchantUrl: "merchantUrl", amount: "amount", referenceId: "referenceId", module: "module", success: { (transactionInfo) in
+  
+        transactionInfo.responseCode // Response Code
+        transactionInfo.responseDescription // ResponseDescription
+        transactionInfo.transactionId // Transaction Id
+        transctionInfo.customerMsisdn // Customer mobile number (IME Pay wallet ID)
+        transctionInfo.amount // Payment Amount
+        transactionInfo.referenceId // Reference Id
+ 
+  }, failure: { (transactionInfo, errorMessage) in
+         // Transaction Failure
+   })
  ``` 
 
-           
 ###### Note: You can use transaction info passed in success and failure blocks, you shouldnt present any alert when success or failure block is called.
 
 ## Response Codes
